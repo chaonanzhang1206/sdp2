@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    android:padding="5dp" >
+
+    <TableRow android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_spacer"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text=""
+            android:width="0px" />
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_duration"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Duration:  "
+            android:width="0px" />
+
+    </TableRow>
+
+
+    <TableRow android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_matchPosition"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Match Position:  "
+            android:width="0px" />
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_currentPosition"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Current Position: "
+            android:width="0px" />
+
+    </TableRow>
+
+    <TableRow android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_genre"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Genre: "
+            android:width="0px" />
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_mood"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Mood: "
+            android:width="0px" />
+
+    </TableRow>
+
+    <TableRow android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_tempo"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Tempo: "
+            android:width="0px" />
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_origin"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Origin: "
+            android:width="0px" />
+
+    </TableRow>
+
+    <TableRow android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_queryTime"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Time to Match: "
+            android:width="0px" />
+
+        <TextView
+            android:id="@+id/MusicDetail_Activity_lookupSource"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Lookup Source: "
+            android:width="0px" />
+
+    </TableRow>
+
+    <TableRow android:paddingBottom="20dp" >
+
+        <Button
+            android:id="@+id/MusicDetail_Activity_artistBio"
+            android:layout_width="fill_parent"
+            android:layout_height="35dip"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Artist Biography"
+            />
+
+
+        <Button
+            android:id="@+id/MusicDetail_Activity_albumReview"
+            android:layout_width="fill_parent"
+            android:layout_height="35dip"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="  Album Review"
+            android:gravity="center"
+            />
+
+
+    </TableRow>
+
+
+
+
+</TableLayout>

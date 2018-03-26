@@ -1,0 +1,43 @@
+///
+/// Apply executable plug-in to build the library
+///
+apply plugin: 'com.android.library'
+
+///
+/// Android information
+///
+android {
+    ///
+    /// Use API 21 for compiling and building
+    ///
+    compileSdkVersion 21
+    buildToolsVersion '26.0.2'
+
+    ///
+    /// Application configuration targeting Android 14+
+    ///
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 21
+    }
+
+    ///
+    /// Use Java7
+    ///
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+///
+/// Dependencies
+///
+dependencies {
+    compile 'com.google.code.gson:gson:2.3.1'        // Service-JSON
+    compile 'dev.dworks.libs:volleyplus:+'           // Service-Threading
+}
+
+///
+/// Apply Gradle-Maven-Plug-in
+///

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_music_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/Music_Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/music_folder"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#F2E2CD"
+            app:srcCompat="@mipmap/icon_music_folder"/>
+        <Button
+            android:id="@+id/Music_Button_Scan"
+            android:layout_width="7dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#F2E2CD"
+            android:text="Local Music"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/Music_Button_Search"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:background="#F2E2CD"
+            app:srcCompat="@mipmap/icon_search"/>
+        <Button
+            android:id="@+id/Button_SearchMusic"
+            android:layout_width="7dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#F2E2CD"
+            android:text="Search Music"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</LinearLayout>

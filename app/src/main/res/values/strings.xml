@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SDP2018_Team4</string>
+    <string name="title_activity_music_detail">MusicDetailActivity</string>
+    <string name="facebook_app_id">223119394919802</string>
+    <string name="fb_login_protocol_scheme">fb223119394919802</string>
+</resources>

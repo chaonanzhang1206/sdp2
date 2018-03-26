@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="0dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:clickable="true"
+        android:id="@+id/play_all_layout"
+        android:layout_gravity="top"
+        android:background="@mipmap/user_bg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageButton
+            android:id="@+id/play_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/music_button_play"
+            android:background="#0000"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/play_all_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/play_all"
+            android:gravity="center_vertical"
+            android:text="Play All"
+            android:textColor="#E75719"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/play_all_number"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/play_all_text"
+            android:gravity="center_vertical"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/select"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center|clip_vertical"
+            android:focusable="false"
+            android:gravity="end"
+            android:paddingLeft="15dp"
+            android:paddingRight="12dp"
+            android:src="@mipmap/icon_list"
+            android:background="#0000"/>
+    </RelativeLayout>
+
+</LinearLayout>

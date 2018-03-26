@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout">
+
+
+        <ImageView
+            android:id="@+id/header_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerCrop"
+
+            android:src="@mipmap/user_background"
+            app:srcCompat="@mipmap/user_background" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+
+            android:clickable="true"
+            app:civ_border_width="3dp"
+            app:civ_border_color="#800000"
+
+            android:id="@+id/profile"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_below="@+id/header_cover_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-130dp"
+            android:elevation="5dp"
+            android:padding="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/man" />
+
+        <RelativeLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_cover_image"
+            android:background="#1113"
+            android:elevation="4dp"
+            android:paddingBottom="24dp">
+
+
+            <ImageView
+                android:id="@+id/edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="12dp"
+                android:clickable="true"
+
+                android:src="@android:drawable/ic_menu_edit" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="User Name"
+                android:textColor="#008080"
+                android:textSize="22sp" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_video_history"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="250dp"
+            android:layout_toEndOf="@+id/icon_video_history"
+            android:layout_toRightOf="@+id/icon_video_history"
+            android:background="#F2E2CD"
+            android:padding="20dp"
+            android:text="Video History"
+            android:gravity="left"
+            android:textAllCaps="false"
+            android:textColor="#0095B6"
+            android:textSize="20dp" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_music_history"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:layout_toEndOf="@+id/icon_music_history"
+            android:layout_toRightOf="@+id/icon_music_history"
+            android:layout_marginBottom="24dp"
+            android:padding="20dp"
+            android:text="Music History"
+            android:gravity="left"
+            android:textColor="#0095B6"
+            android:textSize="20dp"
+            android:background="#F2E2CD"
+            android:textAllCaps="false"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_account_favorite"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="390dp"
+            android:layout_toEndOf="@+id/icon_favorite"
+            android:layout_toRightOf="@+id/icon_favorite"
+            android:layout_marginBottom="24dp"
+            android:padding="20dp"
+            android:text="Favorite"
+            android:gravity="left"
+            android:textColor="#0095B6"
+            android:textSize="20dp"
+            android:background="#F2E2CD"
+            android:textAllCaps="false"/>
+
+        <ImageView
+            android:id="@+id/icon_video_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btn_video_history"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/btn_video_history"
+            android:background="#F2E2CD"
+            app:srcCompat="@mipmap/video_history" />
+
+        <ImageView
+            android:id="@+id/icon_music_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btn_music_history"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/btn_music_history"
+            android:background="#F2E2CD"
+            app:srcCompat="@mipmap/music_history" />
+
+        <ImageView
+            android:id="@+id/icon_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btn_account_favorite"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/btn_account_favorite"
+            android:background="#F2E2CD"
+            app:srcCompat="@mipmap/icon_favorite" />
+
+    </RelativeLayout>
+</ScrollView>
