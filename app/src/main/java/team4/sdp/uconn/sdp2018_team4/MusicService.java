@@ -2,18 +2,17 @@ package team4.sdp.uconn.sdp2018_team4;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,7 +30,6 @@ import com.spotify.sdk.android.player.PlayerEvent;
 import com.spotify.sdk.android.player.Spotify;
 import com.spotify.sdk.android.player.SpotifyPlayer;
 
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +47,8 @@ public class MusicService extends AppCompatActivity implements
     private Player mPlayer;
     private static final int REQUEST_CODE = 1337;
 
+    private String savedToken ="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +64,9 @@ public class MusicService extends AppCompatActivity implements
 
         AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
         final ArrayList<String> testlist = new ArrayList<String>();
+        final ArrayList<Track> tracklist = new ArrayList<Track>();
+
+
         ListView listview = (ListView)findViewById(R.id.listview);
         //final CustomAdapter adapter = new CustomAdapter(this,0,items);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
@@ -71,7 +74,21 @@ public class MusicService extends AppCompatActivity implements
                 R.layout.music_listview,
                 R.id.listContent,
                 testlist);
-        listview.setAdapter(adapter);
+
+        final CustomAdapter trackadapter = new CustomAdapter(this, R.layout.music_listview,tracklist);
+        listview.setAdapter(trackadapter);
+        //listview.setAdapter(adapter);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MusicService.this,MusicPlayerActivity.class);
+                intent.putExtra("Uri",tracklist.get(position).getUri());
+                intent.putExtra("Token",savedToken);
+                intent.putExtra("Title",tracklist.get(position).getName());
+                startActivity(intent);
+            }
+        });
 
         Button searchBT = (Button)findViewById(R.id.search_button);
         final EditText editText = (EditText)findViewById(R.id.search_input);
@@ -88,9 +105,10 @@ public class MusicService extends AppCompatActivity implements
                         testlist.clear();
                         for (Track item : results) {
                             Log.d("Track", item.getArtist(0).getName() + " - " + item.getName());
-                            testlist.add("Artist : "+item.getArtist(0).getName() + "\nName : " + item.getName());
+                            //testlist.add("Artist : "+item.getArtist(0).getName() + "\nName : " + item.getName());
+                            tracklist.add(item);
                         }
-                        adapter.notifyDataSetChanged();
+                        trackadapter.notifyDataSetChanged();
                     }
                 }).setErrorListener(new Response.ErrorListener() {
                     @Override
@@ -112,6 +130,9 @@ public class MusicService extends AppCompatActivity implements
             AuthenticationResponse response = AuthenticationClient.getResponse(resultCode, intent);
             if (response.getType() == AuthenticationResponse.Type.TOKEN) {
                 Config playerConfig = new Config(this, response.getAccessToken(), CLIENT_ID);
+
+                savedToken = response.getAccessToken();
+
                 Token token = new Token();
                 token.setmToken(response.getAccessToken());
                 token.setmType(response.getType().toString());
@@ -183,6 +204,33 @@ public class MusicService extends AppCompatActivity implements
             default:
                 break;
         }
+    }
+    private class CustomAdapter extends ArrayAdapter<Track> {
+        private ArrayList<Track> tracks;
+        public CustomAdapter(@NonNull Context context, int resource, ArrayList<Track> objects) {
+            super(context, resource, objects);
+            this.tracks = objects;
+        }
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View v = convertView;
+            if (v == null) {
+                LayoutInflater vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                v = vi.inflate(R.layout.music_listview, null);
+            }
+            //ImageView image = (ImageView)v.findViewById(R.id.imageview);
+            TextView text = (TextView)v.findViewById(R.id.listContent);
+
+            Track track = tracks.get(position);
+
+            //image.setImageURI(Uri.parse(track.getAlbum().getImage(1).getLink()));
+            Log.d("Track", "Image uri : "+track.getAlbum().getImage(1).getLink());
+            text.setText("Title : "+track.getName()+"\nArtist : +"+ track.getArtist(0).getName());
+
+
+            return v;
+        }
+
+
     }
 
 
