@@ -72,7 +72,7 @@
             android:src="@mipmap/music_button_next" />
 
         <ImageButton
-            android:id="@+id/Music_Button_Favorit"
+            android:id="@+id/Music_Button_Favorite"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
